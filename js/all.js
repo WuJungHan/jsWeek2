@@ -39,7 +39,7 @@
 // 解答是 
 // m 為：3
 // n 為：15
-// 原因是 m的部分是因為if判斷式條件2>1是true,所以執行m=3,n的部分是因為if判斷式為true,所以執行5+10=15
+// 原因是 m的部分是因為if判斷式條件2>1是true,會執行後方大括號內的程式碼。因此m會被重新賦予為3,n的部分是因為if判斷式為true,所以執行5+10=15
 
 /***   作業 3 填答區結束   **/
 
@@ -55,8 +55,8 @@ let restaurantChildHeight = 120;
 //帳單初始金額(媽媽的費用)
 let bill = 600;
 
-//如果小明身高>=免費的身高
-if (childHieght >= restaurantChildHeight) {
+//如果小明身高>免費的身高
+if (childHieght > restaurantChildHeight) {
   //執行
   bill += 300;
   //不然
@@ -105,7 +105,7 @@ console.log(`小華一共得了${badge}個徽章`);
 
 //是否有折扣資格
 // true
-// 原因是判斷3000<=1000是false 或者 20>10是true;
+// || 是代表只要符合其中一項條件即可成立，雖然 hamPrice*hamNum 沒有大於 3000，但 hamNum 有大於 20，所以結果為 true 。;
 
 /***   作業 6 填答區結束   **/
 
@@ -145,7 +145,7 @@ let BobIsVip = false;/*Bob 是否為Vip*/
 
 //修改開始
 //判斷
-if (BobPrice >= giftPriceRule || BobIsVip === true) {
+if (BobPrice >= giftPriceRule || BobIsVip) {
   //true
   console.log(`客戶您好,您有符合贈品資格`);
   giftNum -= 1;
@@ -189,7 +189,7 @@ console.log(`小明總共需支付${mingBill}帳單`)
 /*Whimsical:https://whimsical.com/js-7GHKT6Yxi2JWcwKWVEeJbd*/
 let playerA = '石頭';
 let playerB = '布';
-if (playerA === '剪刀' && playerB === '剪刀') {
+if (playerA === playerB) {
   console.log('平手');
 } else if (playerA === '剪刀' && playerB === '石頭') {
   console.log('playerB WIN');
@@ -197,16 +197,12 @@ if (playerA === '剪刀' && playerB === '剪刀') {
   console.log('playerA WIN');
 } else if (playerA === '石頭' && playerB === '剪刀') {
   console.log('playerA WIN');
-} else if (playerA === '石頭' && playerB === '石頭') {
-  console.log('平手');
 } else if (playerA === '石頭' && playerB === '布') {
   console.log('playerB WIN');
 } else if (playerA === '布' && playerB === '剪刀') {
   console.log('playerB WIN');
 } else if (playerA === '布' && playerB === '石頭') {
   console.log('playerA WIN');
-} else if (playerA === '布' && playerB === '布') {
-  console.log('平手');
 } else {
   console.log('無效');
 }
